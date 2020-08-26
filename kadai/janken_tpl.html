@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<script src="js/jquery-2.1.3.min.js"></script>
+<link rel="stylesheet" href="css/sample.css">
+<link rel="kinniku" href="img/kinniku.png">
+<link rel="gu_btn" href="img/gu.png">
+<link rel="cho_btn" href="img/cho.png">
+<link rel="par_btn" href="img/pa.png">
+<link rel="スクワット" href="img/スクワット.jpg">
+<link rel="腕立て伏せ" href="img/腕立て伏せ.jpg">
+<link rel="腹筋" href="img/腹筋.jpg">
+<title>じゃんけん</title>
+</head>
+<body>
+
+<header>
+  <h1>筋トレじゃんけん</h1>
+  <div class="kinniku"><img src="img/kinniku.png" alt=""></div>
+  <h2>じゃんけんで勝ったら筋トレするアプリケーションです！
+    <br>じゃんけんに勝ちまくって理想の体を目指しましょう！
+  </h2>
+</header>
+
+<main>
+  <ul>
+    <li id="gu_btn"><img src="img/gu.png" alt=""></li>
+    <li id="cho_btn"><img src="img/cho.png" alt=""></li>
+    <li id="par_btn"><img src="img/pa.png" alt=""></li>
+  </ul>
+  <div class="pc_hands">コンピュータの出した手は？<span id="pc_hands"></span></div>
+  <div id="judgment">勝敗</div>
+  <div id="training">筋トレ種目</div>
+</main>
+
+<footer></footer>
+<script>
+//じゃんけん用のSCRIPTを書いてください
+  $("#gu_btn").on("click",function(){
+  const num=Math.ceil(Math.random()*3);
+  console.log(num);
+  if(num==1){
+    $("#pc_hands").html('<img src="img/gu.png" alt="">');
+    $("#judgment").html("引き分け");
+    $("#training").html("残念・・・筋トレ無し");
+  }
+  if(num==2){
+    $("#pc_hands").html('<img src="img/cho.png" alt="">');
+    $("#judgment").html("あなたの勝ち");
+    $("#training").html('おめでとう！スクワット10回<img src="img/スクワット.jpg" alt="">');
+  }
+  if(num==3){
+    $("#pc_hands").html('<img src="img/pa.png" alt="">');
+    $("#judgment").html("あなたの負け");
+    $("#training").html("残念・・・筋トレ無し");
+  }
+  });
+
+  $("#cho_btn").on("click",function(){
+  const num=Math.ceil(Math.random()*3);
+  console.log(num);
+  if(num==1){
+    $("#pc_hands").html('<img src="img/gu.png" alt="">');
+    $("#judgment").html("あなたの負け");
+    $("#training").html("残念・・・筋トレ無し");
+  }
+  if(num==2){
+    $("#pc_hands").html('<img src="img/cho.png" alt="">');
+    $("#judgment").html("引き分け");
+    $("#training").html("残念・・・筋トレ無し");
+  }
+  if(num==3){
+    $("#pc_hands").html('<img src="img/pa.png" alt="">');
+    $("#judgment").html("あなたの勝ち");
+    $("#training").html('おめでとう！腕立て伏せ10回<img src="img/腕立て伏せ.jpg" alt="">');
+  }
+  });
+
+  $("#par_btn").on("click",function(){
+  const num=Math.ceil(Math.random()*3);
+  console.log(num);
+  if(num==1){
+    $("#pc_hands").html('<img src="img/gu.png" alt="">');
+    $("#judgment").html("あなたの勝ち");
+    $("#training").html('おめでとう！腹筋10回<img src="img/腹筋.jpg" alt="">');
+  }
+  if(num==2){
+    $("#pc_hands").html('<img src="img/cho.png" alt="">');
+    $("#judgment").html("あなたの負け");
+    $("#training").html("残念・・・筋トレ無し");
+  }
+  if(num==3){
+    $("#pc_hands").html('<img src="img/pa.png" alt="">');
+    $("#judgment").html("引き分け");
+    $("#training").html("残念・・・筋トレ無し");
+  }
+  });
+
+
+</script>
+</body>
+</html>
